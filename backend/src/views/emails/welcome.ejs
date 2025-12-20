@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
+        .container { max-width: 600px; margin: 0 auto; padding: 20px; border: 1px solid #ddd; border-radius: 5px; }
+        .header { background-color: #4f46e5; color: white; padding: 10px 20px; border-radius: 5px 5px 0 0; }
+        .content { padding: 20px; }
+        .footer { font-size: 12px; color: #666; text-align: center; margin-top: 20px; border-top: 1px solid #ddd; padding-top: 10px; }
+        .button { display: inline-block; padding: 10px 20px; background-color: #4f46e5; color: white; text-decoration: none; border-radius: 5px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h2>Welcome to TWINCOM!</h2>
+        </div>
+        <div class="content">
+            <p>Hi <%= user.full_name %>,</p>
+            <p>We're thrilled to have you on board! Your email has been successfully verified, and your account is now fully active.</p>
+            <p>You can now browse our collection of high-quality products and place orders.</p>
+            <div style="text-align: center; margin: 30px 0;">
+                <a href="<%= process.env.FRONTEND_URL || 'http://localhost:3000' %>/shop" class="button">Start Shopping</a>
+            </div>
+            <p>If you have any questions, feel free to reply to this email.</p>
+            <p>Happy Shopping,<br>The TWINCOM Team</p>
+        </div>
+        <div class="footer">
+            <p>&copy; <%= new Date().getFullYear() %> TWINCOM. All rights reserved.</p>
+        </div>
+    </div>
+</body>
+</html>

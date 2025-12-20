@@ -1,0 +1,61 @@
+@import "tailwindcss";
+
+
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+    body {
+        transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        transition-duration: 200ms;
+    }
+}
+
+html.dark body {
+    /* Use CSS variables for theme colors instead of @apply to avoid build errors */
+    background-color: var(--color-gray-900);
+    color: var(--color-white);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    /* gray-300 */
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+    /* gray-400 */
+}
+
+.dark ::-webkit-scrollbar-thumb {
+    background: #475569;
+    /* gray-600 */
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+    background: #64748b;
+    /* gray-500 */
+}
+
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Text Selection */
+::selection {
+    background-color: #6366f1;
+    /* indigo-500 */
+    color: white;
+}
